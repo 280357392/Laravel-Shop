@@ -1,12 +1,13 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+// 这里加上 MustVerifyEmail 从 Laravel 5.7 起，Laravel 自带了邮箱验证的相关字段和功能
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
